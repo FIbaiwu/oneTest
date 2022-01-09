@@ -45,14 +45,12 @@
       <groupId>javax.servlet.jsp</groupId>
       <artifactId>jsp-api</artifactId>
       <version>${jsp-api.version}</version>
-      <scope>provided</scope>
     </dependency>
     <!--servlet依赖-->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>${servlet-api.version}</version>
-      <scope>provided</scope>
     </dependency>
     <!--jstl标准标签库依赖-->
     <dependency>
@@ -78,6 +76,11 @@
       <artifactId>mybatis-paginator</artifactId>
       <version>${mybatis.paginator.version}</version>
     </dependency>
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
+      <version>${pagehelper.version}</version>
+    </dependency>
     <!--spring整合 mybatis 依赖-->
     <dependency>
       <groupId>org.mybatis</groupId>
@@ -97,9 +100,19 @@
       <version>${spring.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
       <!--springmvc 依赖-->
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
       <version>${spring.version}</version>
     </dependency>
     <!--spring事务依赖-->

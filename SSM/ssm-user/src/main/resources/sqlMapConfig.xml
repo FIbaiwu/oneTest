@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <!-- 配置文件的根元素 -->
 <configuration>
-<settings>
-    <setting name="logImpl" value="STDOUT_LOGGING"/>
-</settings>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
 </configuration>

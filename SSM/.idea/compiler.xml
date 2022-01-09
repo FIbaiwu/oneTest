@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ssm-user" target="1.8" />
+      <module name="ssm_user" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

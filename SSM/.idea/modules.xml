@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ssm-user/ssm-user.iml" filepath="$PROJECT_DIR$/ssm-user/ssm-user.iml" />
+      <module fileurl="file://G:/java/vuedemo01/vuedemo01.iml" filepath="G:/java/vuedemo01/vuedemo01.iml" />
     </modules>
   </component>
 </project>

@@ -4,37 +4,34 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
   <!--过滤器 post请求编码-->
-<filter>
-  <filter-name>characterEncodingFilter</filter-name>
-  <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-  <!--private String encoding;-->
-  <!--private boolean forceRequestEncoding;-->
-  <!--private boolean forceResponseEncoding;-->
-  <init-param>
-    <param-name>encoding</param-name>
-    <param-value>UTF-8</param-value>
-  </init-param>
-  <init-param>
-    <param-name>forceRequestEncoding</param-name>
-    <param-value>true</param-value>
-  </init-param>
-  <init-param>
-    <param-name>forceResponseEncoding</param-name>
-    <param-value>true</param-value>
-  </init-param>
-</filter>
+  <filter>
+    <filter-name>encode</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>forceRequestEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>forceResponseEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
   <filter-mapping>
-    <filter-name>characterEncodingFilter</filter-name>
+    <filter-name>encode</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
   <!--注册中央调度器-->
   <servlet>
     <servlet-name>dispatcherServlet</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <init-param>
-      <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:springmvc.xml</param-value>
-    </init-param>
+  <init-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:springmvc.xml</param-value>
+  </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
@@ -47,6 +44,6 @@
   </listener>
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:applicationContext*.xml</param-value>
+    <param-value>classpath:applicationContext_*.xml</param-value>
   </context-param>
 </web-app>
