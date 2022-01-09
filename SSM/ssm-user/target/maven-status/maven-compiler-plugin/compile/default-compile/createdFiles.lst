@@ -1,0 +1,5 @@
+com\bjpowernode\service\impl\SsmUsersServiceImpl.class
+com\bjpowernode\controller\UserController.class
+com\bjpowernode\domain\SsmUsers.class
+com\bjpowernode\service\SsmUsersService.class
+com\bjpowernode\mapper\SsmUsersMapper.class
