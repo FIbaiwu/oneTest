@@ -25,4 +25,19 @@ public class SsmUsersServiceImpl implements SsmUsersService {
     public Integer removeUserById(String userId) {
         return mapper.deleteUserById(userId);
     }
+
+    @Override
+    public Integer addUser(SsmUsers user) {
+        return mapper.insertUser(user);
+    }
+
+    @Override
+    public Integer modifyUser(SsmUsers users) {
+        return mapper.updateUser(users);
+    }
+
+    @Override
+    public Integer removeUserByIdList(List<String> id) {
+        return mapper.deleteUserByIdList(id);
+    }
 }

@@ -22,6 +22,20 @@
     <sql id="allColumn">
         user_id,card_type,card_no,user_name,user_sex,user_age,user_role
     </sql>
+
+    <insert id="insertUser">
+        insert into ssmusers values (#{userId},#{cardType},#{cardNo},#{userName},#{userSex},#{userAge},#{userRole})
+    </insert>
+    <update id="updateUser" >
+        update ssmusers set card_type = #{cardType},card_no = #{cardNo},user_name = #{userName},user_sex = #{userSex},user_age=#{userAge},user_role = #{userRole} where user_id = #{userId}
+    </update>
+
+    <delete id="deleteUserByIdList">
+        delete from ssmusers where user_id in
+        <foreach collection="list" item="uid" open="(" close=")" separator=",">
+          #{uid}
+    </foreach>
+    </delete>
     <select id="selectUserPage"  resultMap="BaseResultMap" >
         select <include refid="allColumn"/> from ssmusers
         <where>
