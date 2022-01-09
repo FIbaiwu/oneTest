@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+        <!--private String userId;-->
+        <!--private String cardType;-->
+        <!--private String cardNo;-->
+        <!--private String userName;-->
+        <!--private String userSex;-->
+        <!--private String userAge;-->
+        <!--private String userRole;-->
+<mapper namespace="com.bjpowernode.mapper.SsmUsersMapper">
+    <resultMap id="BaseResultMap" type="com.bjpowernode.domain.SsmUsers">
+        <id property="userId"  column="user_id"/>
+        <result property="cardType" column="card_type" />
+        <result property="cardNo" column="card_no" />
+        <result property="userName" column="user_name" />
+        <result property="userSex" column="user_sex" />
+        <result property="userAge" column="user_age" />
+        <result property="userRole" column="user_role" />
+    </resultMap>
+    <sql id="allColumn">
+        user_id,card_type,card_no,user_name,user_sex,user_age,user_role
+    </sql>
+    <select id="selectUserPage"  resultMap="BaseResultMap" >
+        select <include refid="allColumn"/> from ssmusers
+        <where>
+            <if test="userName !=null and userName !=''">
+                and user_name like concat("%",#{userName},"%")
+            </if>
+            <if test="userSex !=null and userSex != ''">
+                and user_sex = #{userSex}
+            </if>
+        </where>
+        limit #{page},5
+    </select>
+
+    <select id="getRowCount" resultType="int">
+        select count(user_id) from ssmusers
+        <where>
+            <if test="userName !=null and userName !=''">
+                and user_name like concat("%",#{userName},"%")
+            </if>
+            <if test="userSex !=null and userSex != ''">
+                and user_sex = #{userSex}
+            </if>
+        </where>
+    </select>
+    <delete id="deleteUserById">
+        delete  from ssmusers where user_id = #{userId}
+    </delete>
+</mapper>
